@@ -1,7 +1,10 @@
 {
   "name": "Pauline et Damien",
   "description": "Se marient",
-  "scripts": {},
+  "scripts": {
+    "test-setup": "bundle install --with test",
+    "test": "bundle exec rake"
+  },
   "env": {},
   "formation": {
     "web": {

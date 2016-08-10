@@ -3,7 +3,7 @@
   "description": "Se marient",
   "scripts": {
     "test-setup": "bundle install --with test",
-    "test": "bundle exec rake"
+    "test": "bin/cibuild"
   },
   "env": {},
   "formation": {

@@ -7,3 +7,13 @@ height: 100%;
   border-radius: 0px;
   border: 0px;
 }
+
+.navbar-podam .navbar-header .navbar-brand,
+.navbar-podam .navbar-nav>li>a {
+  color: #F5F5F5;
+}
+.navbar-podam .navbar-header .navbar-brand:hover,
+.navbar-podam .navbar-nav>li>a:hover {
+  color: #000;
+  background-color: rgb(204, 204, 204);
+}

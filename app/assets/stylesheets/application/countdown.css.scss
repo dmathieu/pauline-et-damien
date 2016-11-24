@@ -1,0 +1,29 @@
+.countdown {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px 0px;
+
+  .entry {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+
+    border: 1px solid rgb(51, 51, 51);
+    border-radius: 50%;
+
+    .value {
+      margin-top: 20px;
+      display: block;
+      width: 100%;
+    }
+
+    .title {
+      display: block;
+      width: 100%;
+    }
+  }
+}

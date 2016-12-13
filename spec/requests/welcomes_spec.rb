@@ -7,4 +7,11 @@ RSpec.describe "Main page", type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "GET /logements" do
+    it "renders the accomodations page" do
+      get logements_path
+      expect(response).to have_http_status(200)
+    end
+  end
 end

@@ -1,37 +1,83 @@
+<%= content_for :page_title, "Se loger" %>
 <div class="container">
 
-  <div class="row">
-    <div class="col-md-4">
-      <h1>Chambres d'hotes</h1>
-      <ul>
-        <li><a href="http://rampeau.free.fr/">Le Rampeau</a></li>
-        <li><a href="http://patrick.picheloup.free.fr/">Le moulin de Pine</a></li>
-        <li><a href="http://www.les-pesques.com/">Les pesques</a></li>
-        <li><a href="http://notredamedelorette.com/pratiq/ch/Campignas.pdf">Campignas</a></li>
-        <li><a href="http://www.benque-hotes.com/">Benqu'Hotes</a></li>
-        <li><a href="http://www.lescalere.jimdo.com/">L'escalère</a></li>
-      </ul>
+  <h1>Chambres d'hotes</h1>
+  <div class="row category">
+    <div class="col-md-4 entry">
+      <a href="http://rampeau.free.fr/">
+        <%= image_tag 'logements/rampeau.png' %>
+        <p>Le Rampeau</p>
+      </a>
     </div>
 
-    <div class="col-md-4">
-      <h1>Hotels</h1>
-      <ul>
-        <li><a href="http://fr.federal-hotel.com/hotel_hotel-restaurant-du-lac-boussens_11419.htm">Hotel du lac</a></li>
-        <li><a href="http://fr.federal-hotel.com/hotel_hotel-le-tolosan-boussens_111210.htm">Le Tolosan</a></li>
-        <li><a href="http://fr.federal-hotel.com/hotel_hotel-le-cerf-blanc-aurignac_11431.htm">Le cerf blanc</a></li>
-        <li><a href="http://fr.federal-hotel.com/hotel_hotel-le-cochon-de-lait-cazeres_11422.htm">Le cochon de lait</a></li>
-        <li><a href="http://fr.federal-hotel.com/hotel_auberge-ariegeoise-cazeres_11722.htm">Auberge Ariégeoise</a></li>
-        <li><a href="http://fr.federal-hotel.com/hotel_hotel-castet-martres-tolosane_11395.htm">Castet</a></li>
-      </ul>
+    <div class="col-md-4 entry">
+      <a href="http://www.les-pesques.com/">
+        <%= image_tag 'logements/pesques.jpg' %>
+        <p>Les pesques</p>
+      </a>
     </div>
 
-    <div class="col-md-4">
-      <h1>Gites</h1>
-      <ul>
-        <li><a href="http://www.gite-moulindebachas.com/">Moulin de Bachas</a></li>
-        <li><a href="http://notredamedelorette.com/pratiq/saintblancat.html">Saint Blancat</a></li>
-        <li><a href="http://notredamedelorette.com/pratiq/R-beillat.pdf">Rébeillat</a></li>
-      </ul>
+    <div class="col-md-4 entry">
+      <a href="http://www.benque-hotes.com/">
+        <%= image_tag 'logements/benque-hotes.jpg' %>
+        <p>Benqu'Hotes</p>
+      </a>
+    </div>
+
+    <div class="col-md-4 entry">
+      <a href="http://www.lescalere.jimdo.com/">
+        <%= image_tag 'logements/lescalere.jpg' %>
+        <p>L'escalère</p>
+      </a>
     </div>
   </div>
+
+  <h1>Hotels</h1>
+  <div class="row category">
+    <div class="col-md-4 entry">
+      <a href="http://www.hotelrestaurantdulac.com/">
+        <%= image_tag 'logements/hotel-du-lac.jpg' %>
+        <p>Hotel du lac</p>
+      </a>
+    </div>
+
+    <div class="col-md-4 entry">
+      <a href="http://www.cerfblanc.com/">
+        <%= image_tag 'logements/cerf-blanc.jpg' %>
+        <p>Le cerf blanc</p>
+      </a>
+    </div>
+
+    <div class="col-md-4 entry">
+      <a href="http://fr.federal-hotel.com/hotel_hotel-le-cochon-de-lait-cazeres_11422.htm">
+        <%= image_tag 'logements/cochon-lait.jpg' %>
+        <p>Le cochon de lait</p>
+      </a>
+    </div>
+
+    <div class="col-md-4 entry">
+      <a href="http://www.hotelcastet.fr/">
+        <%= image_tag 'logements/castet.jpg' %>
+        <p>Castet</p>
+      </a>
+    </div>
+  </div>
+
+  <h1>Gites</h1>
+  <div class="row category">
+    <div class="col-md-4 entry">
+      <a href="http://www.gite-moulindebachas.com/">
+        <%= image_tag 'logements/bachas.jpg' %>
+        <p>Moulin de Bachas</p>
+      </a>
+    </div>
+
+    <div class="col-md-4 entry">
+      <a href="http://notredamedelorette.com/pratiq/R-beillat.pdf">
+        <%= image_tag 'logements/rebeillat.png' %>
+        <p>Rébeillat</p>
+      </a>
+    </div>
+  </div>
+
 </div>

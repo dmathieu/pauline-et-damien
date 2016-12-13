@@ -18,6 +18,7 @@
   "addons": [
     "heroku-postgresql"
   ],
+  "stack": "heroku-16",
   "buildpacks": [
     {
       "url": "heroku/ruby"

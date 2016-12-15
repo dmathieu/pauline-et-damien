@@ -90,15 +90,18 @@ var loadMap = function(parent, origin, mode) {
 
 jQuery(document).ready(function() {
   var apiKey = 'AIzaSyD83QHIVNb8ICtxJeyMV_Q0oAVrUhM-u8g';
-  var script = jQuery('<script async defer \
+
+  if (jQuery('#map').length > 0) {
+    var script = jQuery('<script async defer \
     src="https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=loadMap"> \
     </script>').appendTo('head');
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      jQuery('#location').
-        val(position.coords.latitude + ', ' + position.coords.longitude).
-        keyup();
-    });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        jQuery('#location').
+          val(position.coords.latitude + ', ' + position.coords.longitude).
+          keyup();
+      });
+    }
   }
 });

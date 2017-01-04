@@ -1,0 +1,49 @@
+<%= content_for :page_title, "Localisation géographique" %>
+<% content_for :page_class, "venir" %>
+<div class="container">
+  <div class="jumbotron">
+    <p>
+    Notre c&eacute;r&eacute;monie de mariage aura lieu &agrave; <strong>Alan</strong> (31420) dans la chapelle <strong>Notre-Dame de Saint Bernard</strong>.
+    </p>
+
+    <p>&Agrave; la suite de la c&eacute;r&eacute;monie, un vin d'honneur sera servi &agrave; <strong>Notre-Dame de Lorette</strong>.</p>
+
+    <p>
+      <a href="https://www.google.com/maps/d/viewer?mid=1hQAeBB09s5c5KX9On_ueZdfoDp8&ll=43.22382536586592%2C0.9211119500000677&z=16">Voir dans Google Maps</a>
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="form-group">
+        <label for="location">D'où partez-vous?</label>
+        <input type="text" class="form-control" id="location">
+      </div>
+
+      <div class="form-group">
+        <label for="mode">Moyen de transport</label>
+        <div>
+          <div class="btn-group" id="mode">
+            <button type="button" class="btn btn-default active" data-name="DRIVING">Voiture</button>
+            <button type="button" class="btn btn-default" data-name="BICYCLING">Vélo</button>
+            <button type="button" class="btn btn-default" data-name="WALKING">Pied</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-warning hide" id="directions_error">
+        Erreur! Impossible de charger ces directions. <span class="error"></span>
+      </div>
+
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <p>Si vous d&eacute;sirez venir en train et avez besoin d'un covoiturage depuis Toulouse, n'h&eacute;sitez pas &agrave; nous contacter.</p>
+  </div>
+</div>

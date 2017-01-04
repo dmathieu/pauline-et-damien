@@ -14,4 +14,11 @@ RSpec.describe "Main page", type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "GET /venir" do
+    it "renders the location page" do
+      get venir_path
+      expect(response).to have_http_status(200)
+    end
+  end
 end

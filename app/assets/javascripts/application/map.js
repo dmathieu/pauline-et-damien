@@ -30,7 +30,6 @@ var loadMap = function(parent, origin, mode) {
     center: {lat: 43.225224, lng: 0.912337}
   });
   directionsDisplay.setMap(map);
-  console.log(map.getCenter().toUrlValue());
 
   var bernard = new google.maps.Marker({
     position: {lat: 43.225224, lng: 0.912337},
@@ -98,9 +97,20 @@ jQuery(document).ready(function() {
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
-        jQuery('#location').
-          val(position.coords.latitude + ', ' + position.coords.longitude).
-          keyup();
+        var geocoder = new google.maps.Geocoder;
+        var latLng = {lat: position.coords.latitude, lng: position.coords.longitude};
+        geocoder.geocode({'location': latLng}, function(results, status) {
+          if (status === 'OK') {
+            jQuery('#directions_error').addClass('hide');
+            jQuery('#location').
+              val(results[1].formatted_address).
+              keyup();
+
+          } else {
+            jQuery('#directions_error .error').text(status);
+            jQuery('#directions_error').removeClass('hide');
+          }
+        });
       });
     }
   }

@@ -5,7 +5,11 @@
     "test-setup": "bundle install --with test",
     "test": "bin/cibuild"
   },
-  "env": {},
+  "env": {
+    "SECRET_KEY_BASE": {
+      "required": false
+    }
+  },
   "formation": {
     "web": {
       "quantity": 1

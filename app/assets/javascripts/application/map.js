@@ -61,7 +61,12 @@ var loadMap = function(parent, origin, mode) {
     calculateAndDisplayRoute(directionsService, directionsDisplay, bernard);
   };
   jQuery('#location').keyup(function() {
-    setTimeout(onChangeHandler, 1000);
+    var value = jQuery('#location').val();
+    setTimeout(function() {
+      if (value == jQuery('#location').val()) {
+        onChangeHandler();
+      }
+    }, 1000);
   });
   jQuery('#mode button').click(function(e) {
     jQuery('#mode button').removeClass('active');

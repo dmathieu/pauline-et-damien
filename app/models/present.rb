@@ -1,5 +1,7 @@
 class Present < ApplicationRecord
 
+  has_many :payments
+
   validates :title,
     presence: true
   validates :description,
@@ -17,5 +19,14 @@ class Present < ApplicationRecord
 
   def price
     self.price_cent/100
+  end
+
+  def remaining
+    remaining_cent/100
+  end
+
+  private
+  def remaining_cent
+    self.price_cent - payments.sum(:amount_cent)
   end
 end

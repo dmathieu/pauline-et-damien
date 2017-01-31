@@ -53,4 +53,17 @@ RSpec.describe Present, type: :model do
       subject.price_cent = 5000
     end
   end
+
+  describe "remaining" do
+    let(:present) { create(:present, price_cent: 50000) }
+    before do
+      3.times do
+        create(:payment, amount_cent: 10000, present: present)
+      end
+    end
+
+    it "should be the remaining price" do
+      expect(present.remaining).to eql(200)
+    end
+  end
 end

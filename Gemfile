@@ -11,11 +11,14 @@ gem 'jquery-rails'
 
 gem 'rollbar'
 
+gem "omniauth-google-oauth2"
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.5'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'dotenv-rails'
 end
 
 group :development do

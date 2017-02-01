@@ -11,7 +11,7 @@
     <% @presents.each do |p| %>
       <div class="col-md-3 entry">
         <%= link_to [:edit, :admin, p] do %>
-          <%= image_tag p.photo %>
+          <%= image_tag p.photo.thumb %>
           <p class="title"><%= p.title %></p>
           <p class="price"><%= p.price %>&euro;</p>
         <% end %>

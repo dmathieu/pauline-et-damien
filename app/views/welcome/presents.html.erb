@@ -10,9 +10,9 @@
            data-description="<%= p.description %>"
            data-price="<%= p.price %>"
            data-remaining="<%= p.remaining %>"
-           data-photo="<%= p.photo %>">
+           data-photo="<%= p.photo.large %>">
         <%= link_to '' do %>
-          <%= image_tag p.photo %>
+          <%= image_tag p.photo.thumb %>
           <p class="title"><%= p.title %></p>
 
           <% if p.finished? %>

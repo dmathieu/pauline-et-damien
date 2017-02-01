@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-  jQuery('.gifts .entry').click(function(e) {
+  jQuery('.gifts.public .entry').click(function(e) {
     var modal = $('#giftsModal')
     var l = jQuery(e.target);
     var p = jQuery(l.parents('.entry'));

@@ -1,6 +1,11 @@
 class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  storage :file
+
+  if ENV["GOOGLE_STORAGE_ID"] && ENV["GOOGLE_STORAGE_SECRET"]
+    storage :fog
+  else
+    storage :file
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

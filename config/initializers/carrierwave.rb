@@ -1,6 +1,5 @@
 if ENV["GOOGLE_STORAGE_ID"] && ENV["GOOGLE_STORAGE_SECRET"]
   CarrierWave.configure do |config|
-    config.storage = :fog
     config.fog_provider = 'fog/google'                        # required
     config.fog_credentials = {
       provider:                         'Google',

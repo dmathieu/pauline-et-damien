@@ -28,6 +28,10 @@ class Present < ApplicationRecord
     remaining_cent/100
   end
 
+  def finished?
+    remaining <= 0
+  end
+
   private
   def remaining_cent
     self.price_cent - payments.sum(:amount_cent)

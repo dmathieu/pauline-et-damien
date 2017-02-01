@@ -9,5 +9,9 @@ Rails.application.routes.draw do
 
   get 'venir' => 'welcome#venir'
   get 'logements' => 'welcome#logements'
+
+  get 'liste-mariage' => 'welcome#presents'
+  post 'payments' => 'welcome#payment'
+
   root 'welcome#index'
 end

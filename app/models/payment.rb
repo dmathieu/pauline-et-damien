@@ -13,10 +13,10 @@ class Payment < ApplicationRecord
     presence: true
 
   def amount=(value)
-    self.amount_cent = value*100
+    self.amount_cent = value.to_i*100
   end
 
   def amount
-    self.amount_cent/100
+    (self.amount_cent || 0)/100
   end
 end

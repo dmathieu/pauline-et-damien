@@ -14,11 +14,11 @@ class Present < ApplicationRecord
     }
 
   def price=(value)
-    self.price_cent = value*100
+    self.price_cent = value.to_i*100
   end
 
   def price
-    self.price_cent/100
+    (self.price_cent || 0)/100
   end
 
   def remaining

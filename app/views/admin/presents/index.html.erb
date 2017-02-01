@@ -1,0 +1,16 @@
+<%= content_for :page_title, "Admin Liste de mariage" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to 'Ajouter un cadeau', new_admin_present_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+  <div class="row">
+    <% @presents.each do |p| %>
+      <div class="col-md-1">
+        <%= link_to p.title, [:edit, :admin, p] %>
+      </div>
+    <% end %>
+  </div>
+</div>

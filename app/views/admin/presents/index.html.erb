@@ -6,10 +6,14 @@
       <%= link_to 'Ajouter un cadeau', new_admin_present_path, class: 'btn btn-default' %>
     </div>
   </div>
-  <div class="row">
+
+  <div class="row gifts">
     <% @presents.each do |p| %>
-      <div class="col-md-1">
-        <%= link_to p.title, [:edit, :admin, p] %>
+      <div class="col-md-2 entry">
+        <%= link_to [:edit, :admin, p] do %>
+          <%= image_tag p.photo %>
+          <%= p.title %>
+        <% end %>
       </div>
     <% end %>
   </div>

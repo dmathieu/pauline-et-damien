@@ -35,7 +35,8 @@ RSpec.describe "Admin presents page", type: :request do
           present: {
             title: "New present",
             description: "test",
-            price: "3"
+            price: "3",
+            photo: Rack::Test::UploadedFile.new(File.open("spec/fixtures/image.png"))
           }, admin: true
         }
         expect(response).to have_http_status(302)

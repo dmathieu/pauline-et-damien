@@ -1,6 +1,7 @@
 class Present < ApplicationRecord
 
   has_many :payments
+  mount_uploader :photo, PhotoUploader
 
   validates :title,
     presence: true
@@ -12,6 +13,8 @@ class Present < ApplicationRecord
       greater_than: 0,
       only_integer: true
     }
+  validates :photo,
+    presence: true
 
   def price=(value)
     self.price_cent = value.to_i*100

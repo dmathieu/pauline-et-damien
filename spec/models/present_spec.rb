@@ -22,6 +22,14 @@ RSpec.describe Present, type: :model do
     end
   end
 
+  describe "photo" do
+    it "rejects creating a present without a photo" do
+      expect do
+        create(:present, photo: nil)
+      end.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Photo can't be blank")
+    end
+  end
+
   describe "price_cent" do
     it "rejects creating a present without a price" do
       expect do

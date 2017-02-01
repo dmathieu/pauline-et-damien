@@ -42,7 +42,7 @@ module Admin
 
     private
     def present_params
-      params.require(:present).permit(:title, :description, :price)
+      params.require(:present).permit(:title, :description, :price, :photo, :photo_cache)
     end
   end
 end

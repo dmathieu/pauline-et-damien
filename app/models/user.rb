@@ -7,6 +7,10 @@ class User
   end
 
   def admin?
-    VALID_EMAILS.include?(email)
+    !guest? && VALID_EMAILS.include?(email)
+  end
+
+  def guest?
+    email.nil?
   end
 end

@@ -4,7 +4,13 @@ class WelcomeController < ApplicationController
   def logements; end
   def venir; end
   def presents
-    @presents = Present.all
+    @presents = Present.all.sort do |a,b|
+      if a.remaining != 0 && b.remaining != 0
+        a.remaining <=> b.remaining
+      else
+        b.remaining <=> a.remaining
+      end
+    end
   end
 
   def payment

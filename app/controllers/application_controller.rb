@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def current_user
     # Urgh! But it's a temporary site
     return test_current_user if Rails.env.test?
-    @current_user ||= find_user
+    @current_user ||= find_user(session[:user_email])
   end
 
   def error(e)
@@ -20,12 +20,11 @@ class ApplicationController < ActionController::Base
     I18n.locale = :fr
   end
 
-  def find_user
-    u = User.find_or_create(session[:user_email])
-    u.touch(:last_sign_in_at)
-    u
+  def find_user(email)
+    User.find_or_create(email)
   end
+
   def test_current_user
-    @current_user ||= User.find_or_create(params[:user_email])
+    @current_user ||= find_user(params[:user_email])
   end
 end

@@ -3,7 +3,9 @@ class User < ApplicationRecord
 
   def self.find_or_create(email)
     return User.new if email.blank?
-    User.where(email: email).first || User.create(email: email)
+    u = User.where(email: email).first || User.create(email: email)
+    u.touch(:last_sign_in_at)
+    u
   end
 
   def admin?

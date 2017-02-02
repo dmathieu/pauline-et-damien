@@ -21,4 +21,11 @@ RSpec.describe "Main page", type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "GET /liste-mariage" do
+    it "renders the liste de mariage page" do
+      get liste_mariage_path
+      expect(response).to have_http_status(200)
+    end
+  end
 end

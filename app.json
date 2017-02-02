@@ -9,6 +9,20 @@
     "SECRET_KEY_BASE": {
       "required": false
     },
+    "GOOGLE_CLIENT_ID": {},
+    "GOOGLE_CLIENT_SECRET": {},
+    "GOOGLE_CLIENT_ID": {
+      "required": false
+    },
+    "GOOGLE_CLIENT_SECRET": {
+      "required": false
+    },
+    "GOOGLE_STORAGE_ID": {
+        "required": false
+    },
+    "GOOGLE_STORAGE_SECRET": {
+      "required": false
+    },
     "ROLLBAR_ACCESS_TOKEN": {
       "required": false
     },

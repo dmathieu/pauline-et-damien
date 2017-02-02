@@ -8,6 +8,12 @@
   "env": {
     "SECRET_KEY_BASE": {
       "required": false
+    },
+    "ROLLBAR_ACCESS_TOKEN": {
+      "required": false
+    },
+    "ROLLBAR_ENDPOINT": {
+      "required": false
     }
   },
   "formation": {

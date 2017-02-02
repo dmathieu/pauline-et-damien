@@ -13,6 +13,7 @@ gem 'rollbar'
 
 gem "omniauth-google-oauth2"
 gem "carrierwave", "~> 1.0"
+gem 'carrierwave-i18n'
 gem "mini_magick"
 
 gem "fog-google"

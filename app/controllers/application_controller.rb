@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
+  before_action :set_locale
 
   rescue_from Exceptions::BaseException, with: :error
 
@@ -15,6 +16,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def set_locale
+    I18n.locale = :fr
+  end
+
   def find_user
     u = User.find_or_create(session[:user_email])
     u.touch(:last_sign_in_at)

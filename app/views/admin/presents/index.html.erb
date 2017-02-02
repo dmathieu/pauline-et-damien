@@ -18,4 +18,16 @@
       </div>
     <% end %>
   </div>
+
+  <h1>Cadeaux d&eacute;j&agrave; faits</h1>
+  <ul class="payments">
+    <% @payments.each do |p| %>
+      <li>
+        <span class="name"><%= p.name %></span>
+        <span class="amount"><%= p.amount %>&euro;</span>
+        <span class="present"><%= p.present.title %></span>
+        <span class="when"><%= l p.created_at, format: :short %></span>
+      </li>
+    <% end %>
+  </ul>
 </div>

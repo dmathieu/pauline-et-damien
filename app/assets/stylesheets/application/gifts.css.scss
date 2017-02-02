@@ -49,3 +49,36 @@
     }
   }
 }
+
+.payments {
+  margin: 0px;
+  padding: 0px;
+
+  li {
+    list-style-type: none;
+    margin: 5px 0px;
+    padding: 5px;
+    border: 1px solid #C8C8C8;
+
+    span {
+      display: inline-block;
+    }
+
+    .name {
+      font-weight: bold;
+      width: 200px;
+    }
+    .amount {
+      color: #095d0d;
+      font-weight: bold;
+      width: 50px;
+    }
+    .present {
+      width: 200px;
+    }
+
+    .when {
+      width: 300px;
+    }
+  }
+}

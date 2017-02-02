@@ -3,6 +3,7 @@ module Admin
 
     def index
       @presents = Present.all
+      @payments = Payment.order(created_at: :desc)
     end
 
     def new

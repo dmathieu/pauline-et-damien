@@ -28,7 +28,7 @@
     },
     "ROLLBAR_ENDPOINT": {
       "required": false
-    },
+    }
   },
   "formation": {
     "web": {

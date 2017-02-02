@@ -2,7 +2,7 @@ class AuthenticationController < ApplicationController
 
   def callback
     email = request.env['omniauth.auth'].extra.id_info["email"]
-    user = User.new(email)
+    user = User.find_or_create(email)
 
     if user.admin?
       session[:user_email] = email

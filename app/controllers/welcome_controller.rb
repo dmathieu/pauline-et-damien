@@ -15,7 +15,11 @@ class WelcomeController < ApplicationController
 
   def payment
     payment = Payment.new(payment_params)
-    payment.save
+    if payment.save
+      flash[:success] = "Nous avons bien enregistré votre cadeau. Merci de votre générosité."
+    else
+      flash[:danger] = "Une erreur est survenue: #{payment.errors.full_messages.join(', ')}"
+    end
     redirect_to liste_mariage_path
   end
 

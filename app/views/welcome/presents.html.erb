@@ -1,32 +1,29 @@
 <%= content_for :page_title, "Liste de mariage" %>
 
-<div class="container">
+<div class="row gifts public">
+  <% @presents.each do |p| %>
+    <div class="col-md-3 entry <%= p.finished? ? "finished" : "" %>"
+         data-id="<%= p.id %>"
+         data-title="<%= p.title %>"
+         data-description="<%= p.description %>"
+         data-price="<%= p.price %>"
+         data-remaining="<%= p.remaining %>"
+         data-photo="<%= p.photo.large %>">
+         <%= link_to '' do %>
+           <%= image_tag p.photo.thumb %>
+           <p class="title"><%= p.title %></p>
 
-  <div class="row gifts public">
-    <% @presents.each do |p| %>
-      <div class="col-md-3 entry <%= p.finished? ? "finished" : "" %>"
-           data-id="<%= p.id %>"
-           data-title="<%= p.title %>"
-           data-description="<%= p.description %>"
-           data-price="<%= p.price %>"
-           data-remaining="<%= p.remaining %>"
-           data-photo="<%= p.photo.large %>">
-        <%= link_to '' do %>
-          <%= image_tag p.photo.thumb %>
-          <p class="title"><%= p.title %></p>
-
-          <% if p.finished? %>
-            <div class="finished">Ce cadeau a d&eacute;j&agrave; &eacute;t&eacute; offert.</div>
-          <% else %>
-            <div class="price"><%= p.price %>&euro;</div>
-            <% if p.price != p.remaining %>
-              <div class="remaining">Il nous manque <%= p.remaining %>&euro;</div>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+           <% if p.finished? %>
+             <div class="finished">Ce cadeau a d&eacute;j&agrave; &eacute;t&eacute; offert.</div>
+           <% else %>
+             <div class="price"><%= p.price %>&euro;</div>
+             <% if p.price != p.remaining %>
+               <div class="remaining">Il nous manque <%= p.remaining %>&euro;</div>
+             <% end %>
+           <% end %>
+         <% end %>
+    </div>
+  <% end %>
 </div>
 
 <div class="modal fade" id="giftsModal">

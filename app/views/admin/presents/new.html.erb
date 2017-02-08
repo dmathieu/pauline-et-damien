@@ -4,52 +4,50 @@
   <%= content_for :page_title, "Admin Ajouter un cadeau" %>
 <% end %>
 
-<div class="container">
-  <div class="row">
-    <%= form_for @present, url: [:admin, @present], html: {class: "form-horizontal"} do |f| %>
-      <div class="col-md-6">
-        <%= form_group(@present, :title) do %>
-          <label for="present_title" class="col-sm-2 control-label">Titre</label>
-          <div class="col-sm-10">
-            <%= f.text_field :title, class: "form-control" %>
-          </div>
-        <% end %>
+<div class="row">
+  <%= form_for @present, url: [:admin, @present], html: {class: "form-horizontal"} do |f| %>
+    <div class="col-md-6">
+      <%= form_group(@present, :title) do %>
+        <label for="present_title" class="col-sm-2 control-label">Titre</label>
+        <div class="col-sm-10">
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+      <% end %>
 
-        <%= form_group(@present, :description) do %>
-          <label for="present_description" class="col-sm-2 control-label">Description</label>
-          <div class="col-sm-10">
-            <%= f.text_area :description, class: "form-control" %>
-          </div>
-        <% end %>
+      <%= form_group(@present, :description) do %>
+        <label for="present_description" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+          <%= f.text_area :description, class: "form-control" %>
+        </div>
+      <% end %>
 
-        <%= form_group(@present, :price_cent) do %>
-          <label for="present_price" class="col-sm-2 control-label">Price</label>
-          <div class="col-sm-10">
-            <%= f.text_field :price, class: "form-control", type: "number" %>
-          </div>
-        <% end %>
+      <%= form_group(@present, :price_cent) do %>
+        <label for="present_price" class="col-sm-2 control-label">Price</label>
+        <div class="col-sm-10">
+          <%= f.text_field :price, class: "form-control", type: "number" %>
+        </div>
+      <% end %>
 
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <%= f.submit "Enregistrer", class: "btn btn-success" %>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.submit "Enregistrer", class: "btn btn-success" %>
 
-            <% if @present.persisted? %>
-              <%= link_to 'Supprimer', [:admin, @present], method: :delete,
-                data: { confirm: "Etes vous sur de vouloir supprimer ce cadeau?" },
-                class: "btn btn-danger" %>
-            <% end %>
-          </div>
+          <% if @present.persisted? %>
+            <%= link_to 'Supprimer', [:admin, @present], method: :delete,
+              data: { confirm: "Etes vous sur de vouloir supprimer ce cadeau?" },
+              class: "btn btn-danger" %>
+          <% end %>
         </div>
       </div>
+    </div>
 
-      <div class="col-md-6">
-        <%= form_group(@present, :photo) do %>
-          <label for="present_photo" class="control-label">Photo</label>
-          <%= f.file_field :photo %>
-          <%= f.hidden_field :photo_cache %>
-        <% end %>
-        <%= image_tag(@present.photo_url, width: '200') if @present.photo? %>
-      </div>
-    <% end %>
-  </div>
+    <div class="col-md-6">
+      <%= form_group(@present, :photo) do %>
+        <label for="present_photo" class="control-label">Photo</label>
+        <%= f.file_field :photo %>
+        <%= f.hidden_field :photo_cache %>
+      <% end %>
+      <%= image_tag(@present.photo_url, width: '200') if @present.photo? %>
+    </div>
+  <% end %>
 </div>

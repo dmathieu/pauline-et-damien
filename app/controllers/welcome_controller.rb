@@ -1,8 +1,11 @@
 class WelcomeController < ApplicationController
 
-  def index; end
+  def index
+    @skip_container = true 
+  end
   def logements; end
   def venir; end
+
   def presents
     @presents = Present.all.sort do |a,b|
       if a.remaining != 0 && b.remaining != 0

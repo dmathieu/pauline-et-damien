@@ -12,10 +12,10 @@
   <body class="<%= content_for :page_class %>">
     <%= render 'shared/navbar' %>
 
-    <div class="container">
+    <%= content_tag(:div, class: @skip_container ? "no_container" : "container") do %>
       <%= render 'shared/flash' %>
       <%= yield %>
-    </div>
+    <% end %>
 
     <%= javascript_include_tag 'application' %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

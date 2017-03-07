@@ -5,6 +5,9 @@ class WelcomeController < ApplicationController
   end
   def logements; end
   def venir; end
+  def rsvp
+    @skip_container = true 
+  end
 
   def presents
     @presents = Present.all.sort do |a,b|

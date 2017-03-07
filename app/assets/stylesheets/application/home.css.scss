@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+
 .navbar-podam .navbar-nav>li>a:hover {
   opacity: .8;
 }
@@ -24,12 +26,45 @@
         font-family: ThirstyScript;
         font-size: 80px;
         color: #fff;
+
+        @media (max-width: 768px) {
+          font-size: 50px;
+        }
       }
 
       > .date {
         font-size: 50px;
         color: #fff;
-        font-family: "Courier New", Courier, monospace;
+        font-family: 'PT Serif', serif;
+
+        @media (max-width: 768px) {
+          font-size: 30px;
+        }
+      }
+
+      > .rsvp {
+        margin-top: 200px;
+
+        @media (max-width: 768px) {
+          margin-top: 50px;
+        }
+      }
+
+      > .contact {
+        font-size: 50px;
+        color: #fff;
+        font-family: 'PT Serif', serif;
+
+        @media (max-width: 768px) {
+          font-size: 30px;
+        }
+
+        bottom: 20px;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
       }
     }
   }

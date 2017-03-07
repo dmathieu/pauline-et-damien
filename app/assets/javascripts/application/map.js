@@ -54,7 +54,7 @@ var loadMap = function(parent, origin, mode) {
       'Lieu de la réception.'
   });
   lorette.addListener('click', function() {
-    bernardInfo.open(map, lorette);
+    loretteInfo.open(map, lorette);
   });
 
   var onChangeHandler = function() {

@@ -10,7 +10,7 @@ class WelcomeController < ApplicationController
   end
 
   def presents
-    @presents = Present.all.sort do |a,b|
+    @presents = Present.all.includes(:payments).sort do |a,b|
       if a.remaining != 0 && b.remaining != 0
         a.remaining <=> b.remaining
       else

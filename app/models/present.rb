@@ -34,6 +34,6 @@ class Present < ApplicationRecord
 
   private
   def remaining_cent
-    self.price_cent - payments.sum(:amount_cent)
+    self.price_cent - payments.inject(0){|s,p| s + p.amount_cent }
   end
 end

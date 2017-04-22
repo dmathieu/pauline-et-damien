@@ -8,6 +8,16 @@ class WelcomeController < ApplicationController
   def rsvp
     @skip_container = true 
   end
+  def civil
+    path = 'app/assets/images/civil/*'
+
+    @images = Dir.glob(path).map do |i|
+      next if i.match(/\.small\./)
+      img = i.gsub('app/assets/images/', '')
+      small = File.dirname(img)+"/"+File.basename(img, File.extname(img))+".small"+File.extname(img)
+      {img: img, small: small}
+    end.compact
+  end
 
   def presents
     @presents = Present.all.includes(:payments).sort do |a,b|

@@ -1,0 +1,25 @@
+<% content_for :page_title, "Notre mariage civil" %>
+
+<div class="jumbotron">
+  <p>Nous nous sommes mariés civilement le <strong>15 avril 2017</strong> en companie de notre famille à Toulouse.</p>
+</div>
+
+<div class="row civil">
+    <% @images.each do |image| %>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail picture" data-img="<%= image_url image[:img] %>">
+          <%= image_tag image[:small] %>
+        </a>
+      </div>
+    <% end %>
+</div>
+
+<div class="modal fade" id="civilModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="" class="picture" />
+      </div>
+    </div>
+  </div>
+</div>

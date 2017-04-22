@@ -11,7 +11,9 @@ class WelcomeController < ApplicationController
   def civil
     path = 'app/assets/images/civil/*'
 
-    @images = Dir.glob(path).map do |i|
+    @images = Dir.glob(path).sort do |a, b|
+      File.basename(a, File.extname(a)) <=> File.basename(b, File.extname(b))
+    end.map do |i|
       next if i.match(/\.small\./)
       img = i.gsub('app/assets/images/', '')
       small = File.dirname(img)+"/"+File.basename(img, File.extname(img))+".small"+File.extname(img)

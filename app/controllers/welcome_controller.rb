@@ -16,7 +16,7 @@ class WelcomeController < ApplicationController
       elsif b.remaining != 0 && a.remaining <= 0
         1
       else
-        b.remaining <=> a.remaining
+        a.remaining <=> b.remaining
       end
     end
   end

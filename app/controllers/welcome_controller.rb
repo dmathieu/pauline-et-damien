@@ -12,9 +12,9 @@ class WelcomeController < ApplicationController
   def presents
     @presents = Present.all.includes(:payments).sort do |a,b|
       if a.remaining != 0 && b.remaining == 0
-        1
-      elsif b.remaining != 0 && a.remaining == 0
         -1
+      elsif b.remaining != 0 && a.remaining == 0
+        1
       else
         b.remaining <=> a.remaining
       end

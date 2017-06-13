@@ -1,0 +1,11 @@
+#civilModal {
+  .modal-dialog {
+    width: 1000px;
+  }
+
+  img {
+    &.picture {
+      width: 100%;
+    }
+  }
+}

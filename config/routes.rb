@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   get 'venir' => 'welcome#venir'
   get 'logements' => 'welcome#logements'
-  get 'rsvp' => 'welcome#rsvp'
 
   get 'liste-mariage' => 'welcome#presents'
   post 'payments' => 'welcome#payment'

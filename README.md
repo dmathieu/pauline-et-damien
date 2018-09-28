@@ -1,1 +1,1 @@
-# Ceci est notre site de mariage!
+# Ceci est notre site de mariage

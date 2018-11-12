@@ -1,9 +1,0 @@
-default: &default
-  adapter: postgresql
-  encoding: unicode
-development:
-  <<: *default
-  database: pauline_et_damien_development
-test:
-  <<: *default
-  database: pauline_et_damien_test

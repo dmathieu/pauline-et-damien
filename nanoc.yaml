@@ -9,3 +9,13 @@ prune:
 data_sources:
   - type: filesystem
     encoding: utf-8
+
+prune:
+  auto_prune: true
+  exclude: [ '.git' ]
+deploy:
+  default:
+    kind: git
+    remote: https://github.com/dmathieu/pauline-et-damien.git
+    branch: gh-pages
+    forced: true
